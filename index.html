@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emanuelle Pereira - Portfólio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header: Banner principal -->
+  <header id="inicio">
+    <div class="banner"> </div>
+      <!-- Imagem de fundo vem do CSS -->
+      <h1>Emanuelle Pereira</h1>
+      <p>"Not all treasure is limited to silver or gold."</p>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+
+    <!-- Seção Sobre Mim -->
+    <section id="sobre" class="sobre">
+      <img src="avatar.png" alt="Foto de Emanuelle" />
+      <div class="texto-sobre">
+        <h2>Sobre mim</h2>
+        <p>Sou uma desenvolvedora em formação, apaixonada por arte, tecnologia e inovação. Me interesso por criação de jogos, design e soluções criativas com código. Estudante de Análise e Desenvolvimento de Sistemas and Estágiaria de TI.</p>
+      </div>
+    </section>
+
+    <!-- Galeria de Desenhos -->
+    <section class="galeria">
+      <div class="galeria-item">
+        <img src="desenho1.jpg" alt="Desenho 1" />
+        <p>Ilustração feita em 2024</p>
+      </div>
+      <div class="galeria-item">
+        <img src="desenho2.jpg" alt="Desenho 2" />
+        <p>Estudo de personagem</p>
+      </div>
+    </section>
+
+    <!-- Seção de Habilidades -->
+    <section id="habilidades" class="habilidades">
+      <img src="beia.png" alt="Imagem central" />
+      <div class="bloco-habilidade">
+        <p><h2>Habilidades</h2></p>
+        <p>HTML5 & CSS3</p>
+        <p>JavaScript</p>
+        <p>Design Gráfico</p>
+        <p>Artista Digital</p>
+        <p>Git & GitHub</p>
+      </div>
+    </section>
+
+    <!-- Projetos com Carrossel -->
+    <section id="projetos" class="projetos">
+      <div class="carousel">
+        <div class="projeto ativo">
+          <img src="projeto1.png" alt="Projeto 1" />
+          <div class="descricao">
+            <h3>Jogo 2D</h3>
+            <p>Jogo feito na Godot Engine</p>
+            <a href="https://github.com/Emanuelleix" target="_blank">Ver no GitHub</a>
+          </div>
+        </div>
+
+        <div class="projeto">
+          <img src="projeto2.png" alt="Projeto 2" />
+          <div class="descricao">
+            <h3>Landing Page</h3>
+            <p>Site pessoal com HTML e CSS</p>
+            <a href="https://github.com/Emanuelleix" target="_blank">Ver no GitHub</a>
+          </div>
+        </div>
+
+        <div class="projeto">
+          <img src="projeto3.png" alt="Projeto 3" />
+          <div class="descricao">
+            <h3>Mini App To-Do</h3>
+            <p>Aplicativo de tarefas simples</p>
+            <a href="https://github.com/Emanuelleix" target="_blank">Ver no GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navegacao">
+        <span class="bolinha ativa"></span>
+        <span class="bolinha"></span>
+        <span class="bolinha"></span>
+      </div>
+    </section>
+
+    <!-- Extras: Hobbies e Curiosidades -->
+    <section id="extras" class="extras">
+      <div class="extra-item">
+        <h3>Hobbies</h3>
+        <ul>
+          <li>Criação de animações</li>
+          <li>Ouvir rock</li>
+          <li>Jogar e criar jogos</li>
+        </ul>
+      </div>
+      <div class="extra-item">
+        <h3>Curiosidades</h3>
+        <ul>
+          <li>Guitarrista</li>
+          <li>19 Anos</li>
+          <li>Mãe de pet</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer id="contato">
+    <div class="contato">
+      <h3>Me encontre online</h3>
+      <ul>
+        <li><a href="https://github.com/Emanuelleix" target="_blank">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/emanuelle-pereira-949939303?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/emanuelle.pereiiraa/profilecard/?igsh=MW9lM2I1OTZ4cG9mNw==" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+    <div class="imagem-final">
+      <img src="beia.png" alt="Enfeite decorativo" />
+    </div>
+    <p class="copyright">© 2025 Emanuelle Pereira. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script do Carrossel -->
+  <script>
+    const projetos = document.querySelectorAll('.projeto');
+    const bolinhas = document.querySelectorAll('.bolinha');
+
+    let projetoAtual = 0;
+
+    function mostrarProjeto(index) {
+      projetos.forEach((projeto, i) => {
+        projeto.classList.remove('ativo');
+        bolinhas[i].classList.remove('ativa');
+      });
+
+      projetos[index].classList.add('ativo');
+      bolinhas[index].classList.add('ativa');
+    }
+
+    bolinhas.forEach((bolinha, i) => {
+      bolinha.addEventListener('click', () => {
+        projetoAtual = i;
+        mostrarProjeto(projetoAtual);
+      });
+    });
+
+    mostrarProjeto(projetoAtual);
+  </script>
+
+</body>
+</html>
